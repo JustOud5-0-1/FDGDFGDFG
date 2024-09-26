@@ -24,10 +24,29 @@
     <img src="https://cdn.dribbble.com/users/6201/screenshots/4809312/output_b3543c.gif" alt="Animated GIF">
     <h2>VirusC2 Botnet</h2>
     <h3>7FLH, FW, xM3L8, alteneiji</h3>
+    <h4>Done Fucked ..! </h3>
+    <h5>t.me/VirusC2</h3>
 
     <audio autoplay loop>
         <source src="https://l.top4top.io/m_31915dwo91.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+    <h2>Your IP Address Information</h2>
+    <p id="ip">IP Address: [ip]</p>
+    <p id="isp">ISP: [isp]</p>
+    <p id="org">Organization: [org]</p>
+    <p id="country">Country: [country]</p>
+
+    <script>
+        fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip').textContent = 'IP Address: ' + data.ip;
+                document.getElementById('isp').textContent = 'ISP: ' + data.org;
+                document.getElementById('org').textContent = 'Organization: ' + data.isp;
+                document.getElementById('country').textContent = 'Country: ' + data.country_name;
+            })
+            .catch(error => console.error('Error fetching IP data:', error));
+    </script>
 </body>
 </html>
